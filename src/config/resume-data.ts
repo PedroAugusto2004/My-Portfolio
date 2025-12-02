@@ -84,7 +84,7 @@ export const resumeData = {
       category: "Frontend",
       icon: "Monitor",
       skills: [
-        { name: "React" }, { name: "Next.js" }, { name: "Tailwind" }, { name: "Framer Motion" }, { name: "HTML/CSS" }, 
+        { name: "React" }, { name: "Next.js" }, { name: "Tailwind" }, { name: "Framer Motion" }, { name: "HTML/CSS" },
         { name: "Bootstrap" }, { name: "Responsive & Mobile-First Design" }, { name: "UI/UX Optimization" },
       ],
     },
@@ -92,9 +92,9 @@ export const resumeData = {
       category: "Backend / Infra",
       icon: "Server",
       skills: [
-        { name: "Node.js" }, { name: "Express.js" }, { name: "AWS Lambda" }, { name: "AWS API Gateway" }, { name: "AWS Amplify" }, 
-        { name: "AWS CloudFront" }, { name: "AWS Cognito" }, { name: "AWS IAM" }, { name: "AWS CloudFormation" }, 
-        { name: "AWS Elastic Beanstalk" }, { name: "AWS Key Management Service (KMS)" }, { name: "Vercel" }, 
+        { name: "Node.js" }, { name: "Express.js" }, { name: "AWS Lambda" }, { name: "AWS API Gateway" }, { name: "AWS Amplify" },
+        { name: "AWS CloudFront" }, { name: "AWS Cognito" }, { name: "AWS IAM" }, { name: "AWS CloudFormation" },
+        { name: "AWS Elastic Beanstalk" }, { name: "AWS Key Management Service (KMS)" }, { name: "Vercel" },
         { name: "Serverless" }, { name: "REST APIs" }, { name: "GraphQL APIs" }, { name: "Authentication & Security (JWT, OAuth)" },
       ],
     },
@@ -102,8 +102,8 @@ export const resumeData = {
       category: "Data & ML",
       icon: "Brain",
       skills: [
-        { name: "RAG pipelines" }, { name: "LLM prompt engineering" }, { name: "Google Gemini" }, 
-        { name: "ChatGPT" }, { name: "Claude-Sonnet" }, { name: "Amazon Q" }, { name: "scikit-learn" }, 
+        { name: "RAG pipelines" }, { name: "LLM prompt engineering" }, { name: "Google Gemini" },
+        { name: "ChatGPT" }, { name: "Claude-Sonnet" }, { name: "Amazon Q" }, { name: "scikit-learn" },
         { name: "PostgreSQL" }, { name: "telemetry & monitoring" },
       ],
     },
@@ -111,9 +111,9 @@ export const resumeData = {
       category: "Tools",
       icon: "Wrench",
       skills: [
-        { name: "GitHub Actions" }, { name: "Supabase" }, { name: "Firebase" }, { name: "Firebase Authentication" }, 
-        { name: "Firebase Firestore" }, { name: "Firebase Realtime Database" }, { name: "Firebase Hosting" }, 
-        { name: "Firebase Cloud Functions" }, { name: "Firebase Cloud Messaging (FCM)" }, { name: "CloudWatch" }, 
+        { name: "GitHub Actions" }, { name: "Supabase" }, { name: "Firebase" }, { name: "Firebase Authentication" },
+        { name: "Firebase Firestore" }, { name: "Firebase Realtime Database" }, { name: "Firebase Hosting" },
+        { name: "Firebase Cloud Functions" }, { name: "Firebase Cloud Messaging (FCM)" }, { name: "CloudWatch" },
         { name: "CI/CD" }, { name: "Docker" }, { name: "Kubernetes" }, { name: "Serverless Framework" },
       ],
     },
@@ -121,18 +121,18 @@ export const resumeData = {
       category: "Other",
       icon: "Users",
       skills: [
-        { name: "Product → deploy ownership" }, { name: "rapid prototyping" }, 
-        { name: "bilingual (PT/EN)" }, { name: "Spanish", description: "Intermediate" }, 
+        { name: "Product → deploy ownership" }, { name: "rapid prototyping" },
+        { name: "bilingual (PT/EN)" }, { name: "Spanish", description: "Intermediate" },
         { name: "English", description: "Fluent" }, { name: "Portuguese", description: "Native" },
       ],
     },
   ] as SkillCategory[],
   experience: [
     {
-      role: "Machine Learning Data Specialist",
+      role: "Machine Learning Specialist",
       company: "Outlier",
       period: "Remote • 2025 – Present",
-      description: "As an Machine Learning Data Specialist at Outlier, I analyze and refine AI prompts to enhance model performance. My responsibilities include training AI systems, analyzing their outputs, and improving the quality of AI-generated content. I also identify and correct errors in user prompts to ensure the highest accuracy and efficiency.",
+      description: "As an Machine Learning Specialist at Outlier, I analyze and refine AI prompts to enhance model performance. My responsibilities include training AI systems, analyzing their outputs, and improving the quality of AI-generated content. I also identify and correct errors in user prompts to ensure the highest accuracy and efficiency.",
       responsibilities: [
         "Analyzed and evaluated LLM outputs across reasoning, code, and prompt-based tasks to improve model performance.",
         "Refined and corrected AI prompts to increase clarity, reduce model errors, and ensure high-quality outputs.",
@@ -239,10 +239,10 @@ ${this.experience.map(exp => `  ${exp.role} at ${exp.company} (${exp.period})\n 
 Professional Summary: ${this.summary}
 
 Key Projects:
-${this.experience.map(exp => `- ${exp.company}: ${exp.description.substring(0,150)}... (Built with ${exp.technologies?.slice(0,3).join(', ') || 'various technologies'})`).join('\n')}
+${this.experience.map(exp => `- ${exp.company}: ${exp.description.substring(0, 150)}... (Built with ${exp.technologies?.slice(0, 3).join(', ') || 'various technologies'})`).join('\n')}
 
 Core Skills:
-${this.skills.flatMap(s => s.skills).slice(0,5).map(skill => skill.name).join(', ')}
+${this.skills.flatMap(s => s.skills).slice(0, 5).map(skill => skill.name).join(', ')}
     `;
   }
 };
