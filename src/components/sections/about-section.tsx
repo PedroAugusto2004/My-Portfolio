@@ -22,7 +22,7 @@ export default function AboutSection() {
 
         <div className="grid md:grid-cols-1 gap-8">
           <AnimatedScrollWrapper as="div" className="w-full" animationClassName="animate-fade-in-up" delay="delay-200">
-            <Accordion type="multiple" className="w-full rounded-lg border bg-card p-2 shadow-sm glass-card">
+            <Accordion type="multiple" className="w-full rounded-lg p-2">
               {resumeData.education.length > 0 && (
                 <AccordionItem value="education">
                   <AccordionTrigger className="px-4 text-lg font-semibold hover:no-underline data-[state=open]:text-primary">

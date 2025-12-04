@@ -82,7 +82,7 @@ export default function ContactSection() {
 
         <div className="grid md:grid-cols-2 gap-10 items-start">
           <AnimatedScrollWrapper delay="delay-100" animationClassName="animate-fade-in-up">
-            <Card className="shadow-md bg-card hover:shadow-lg transition-shadow duration-300">
+            <Card className="transition-shadow duration-300">
               <CardHeader>
                 <CardTitle className="text-2xl text-primary flex items-center gap-2">
                   <Send className="h-6 w-6" /> Send Me a Message
@@ -121,7 +121,7 @@ export default function ContactSection() {
           </AnimatedScrollWrapper>
 
           <AnimatedScrollWrapper delay="delay-200" className="space-y-6" animationClassName="animate-fade-in-up">
-            <Card className="shadow-md p-6 bg-card hover:shadow-lg transition-shadow duration-300">
+            <Card className="p-6 transition-shadow duration-300">
               <h3 className="text-2xl font-semibold text-primary mb-4">Contact Information</h3>
               <p className="text-muted-foreground mb-4">
                 Alternatively, you can reach me through the following channels:
@@ -144,7 +144,7 @@ export default function ContactSection() {
                   <span className="text-foreground group-hover:text-primary transition-colors">GitHub Profile</span>
                 </Link>
               </div>
-              <div className="mt-6 p-4 border rounded-lg bg-background glass-effect">
+              <div className="mt-6 p-4 rounded-lg">
                 <h4 className="font-semibold text-primary mb-2">Preferred Contact Method:</h4>
                 <p className="text-sm text-muted-foreground">
                   Email is generally the quickest way to get a response for inquiries. For professional networking, LinkedIn is also a great option.

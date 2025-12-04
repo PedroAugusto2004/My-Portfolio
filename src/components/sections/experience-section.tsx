@@ -88,7 +88,7 @@ export default function ExperienceSection() {
         <div className="mt-12 space-y-12">
           {resumeData.experience.map((exp: ExperienceEntry, index: number) => (
             <AnimatedScrollWrapper key={index} delay={`delay-${index * 100}`} animationClassName="animate-fade-in-up">
-              <Card className="shadow-md hover:shadow-lg transition-shadow duration-300 bg-card">
+              <Card className="transition-shadow duration-300">
                 <div className="p-4 sm:p-6 md:p-8">
                   {/* First entry: no image layout */}
                   {index === 0 ? (

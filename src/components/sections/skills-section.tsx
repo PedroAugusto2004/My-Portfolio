@@ -36,7 +36,7 @@ export default function SkillsSection() {
               const IconComponent = categoryIcons[category.icon || "Default"] || categoryIcons["Default"];
               return (
                 <AnimatedScrollWrapper key={category.category} delay={`delay-${index * 100}`}>
-                  <Card className="h-full shadow-md hover:shadow-lg transition-shadow duration-300 bg-card">
+                  <Card className="h-full transition-shadow duration-300">
                     <CardHeader>
                       <div className="flex items-center gap-3 mb-2">
                         <IconComponent className="h-8 w-8 text-primary" />
