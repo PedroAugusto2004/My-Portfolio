@@ -16,9 +16,13 @@ export function LanguageSwitcher() {
     return (
         <DropdownMenu>
             <DropdownMenuTrigger asChild>
-                <Button variant="ghost" size="icon" className="rounded-full w-9 h-9 hover:bg-transparent hover:text-primary transition-all duration-300 focus-visible:ring-0 focus-visible:ring-offset-0">
-                    <Globe className="h-[1.2rem] w-[1.2rem] transition-transform duration-300 hover:rotate-180" />
-                    <span className="sr-only">Toggle language</span>
+                <Button
+                    variant="ghost"
+                    size="icon"
+                    className="hover:bg-transparent hover:text-primary focus-visible:ring-0 focus-visible:ring-offset-0 p-0 h-auto w-auto transition-colors duration-300"
+                    aria-label="Select Language"
+                >
+                    <Globe className="h-[1.2rem] w-[1.2rem] transition-transform duration-300 hover:scale-110" />
                 </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end" className="animate-in fade-in zoom-in-95 duration-200">

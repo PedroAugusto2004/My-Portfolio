@@ -10,17 +10,20 @@ export interface SkillCategory {
 }
 
 export interface Certification {
+  id: string;
   name: string;
   issuer: string;
   year?: string | number;
 }
 
 export interface Achievement {
+  id: string;
   title: string;
   description: string;
 }
 
 export interface EducationEntry {
+  id: string;
   degree: string;
   institution: string;
   period: string;
@@ -32,6 +35,7 @@ export interface ProjectLink {
 }
 
 export interface ExperienceEntry {
+  id: string;
   role: string;
   company: string;
   period: string;
@@ -54,20 +58,22 @@ export const resumeData = {
   summary: "I’m a Software Engineer specialized in full stack development and AI. I design, build, and deploy scalable web and mobile applications, develop AI-powered solutions, and optimize machine learning models for real-world performance. My expertise spans end-to-end system architecture, rapid prototyping, API development, cloud deployment, and implementing AI workflows from experimentation to production.",
   education: [
     {
+      id: "ads",
       degree: "B.S. in Analysis and Systems Development",
       institution: "Estácio University",
       period: "Expected 2026",
     },
   ] as EducationEntry[],
   certifications: [
-    { name: "CS50x: Introduction to Computer Science", issuer: "Harvard University" },
-    { name: "CS50AI: Introduction to Artificial Intelligence with Python", issuer: "Harvard University" },
-    { name: "CS50C: Introduction to Cybersecurity", issuer: "Harvard University" },
-    { name: "Front End Development Certification", issuer: "freeCodeCamp" },
-    { name: "100+ hours of training", issuer: "DIO (web dev, cloud, software engineering)" },
+    { id: "cs50x", name: "CS50x: Introduction to Computer Science", issuer: "Harvard University" },
+    { id: "cs50ai", name: "CS50AI: Introduction to Artificial Intelligence with Python", issuer: "Harvard University" },
+    { id: "cs50c", name: "CS50C: Introduction to Cybersecurity", issuer: "Harvard University" },
+    { id: "fcc-frontend", name: "Front End Development Certification", issuer: "freeCodeCamp" },
+    { id: "dio", name: "100+ hours of training", issuer: "DIO (web dev, cloud, software engineering)" },
   ] as Certification[],
   achievements: [
     {
+      id: "hackathon-vox",
       title: "VOX ASTRA Hackathon Winner",
       description: "$300k sponsor prize pool, featured in article, selected from 500+ teams.",
     },
@@ -129,6 +135,7 @@ export const resumeData = {
   ] as SkillCategory[],
   experience: [
     {
+      id: "outlier",
       role: "Machine Learning Specialist",
       company: "Outlier",
       period: "Remote • 2025 – Present",
@@ -142,6 +149,7 @@ export const resumeData = {
       projectLinks: []
     },
     {
+      id: "studyshield",
       role: "Full Stack Engineer",
       company: "StudyShield",
       period: "2025",
@@ -162,6 +170,7 @@ export const resumeData = {
       ]
     },
     {
+      id: "megaphoton",
       role: "Full Stack Developer",
       company: "Megaphoton – Solar Energy",
       period: "Remote • 2025",
@@ -178,6 +187,7 @@ export const resumeData = {
         { name: "Visit Megaphoton", url: "https://www.megaphoton.com.br/" }]
     },
     {
+      id: "medimentor",
       role: "Full Stack Developer",
       company: "MediMentor",
       period: "Remote • 2024 – 2025",
@@ -195,6 +205,7 @@ export const resumeData = {
       ]
     },
     {
+      id: "muscles",
       role: "Full Stack Developer",
       company: "Muscles & Balance",
       period: "Remote • 2023 – 2025",

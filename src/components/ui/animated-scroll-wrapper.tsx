@@ -40,17 +40,11 @@ const AnimatedScrollWrapper: React.FC<AnimatedScrollWrapperProps> = ({
     }
   };
 
+  // Animation disabled for performance
   return (
-    <MotionTag
-      ref={ref}
-      initial="hidden"
-      animate={isInView ? "visible" : "hidden"}
-      variants={variants}
-      className={cn(className)}
-      {...props}
-    >
+    <div className={cn(className, initialClassName)} {...props}>
       {children}
-    </MotionTag>
+    </div>
   );
 };
 

@@ -67,17 +67,17 @@ export default function AboutSection() {
                               {cert.year && <span className="text-sm"> ({cert.year})</span>}
                             </span>
                           </div>
-                          {cert.name === "CS50x: Introduction to Computer Science" && (
+                          {cert.id === "cs50x" && (
                             <div className="mt-2 pl-7">
                               <Dialog>
                                 <DialogTrigger asChild>
-                                  <button aria-label={`View ${cert.name} Certificate`} className="outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded">
+                                  <button aria-label={`View ${cert.name} Certificate`} className="outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-md overflow-hidden shadow-md max-w-[200px] border border-border/50 transition-transform duration-300 hover:scale-105 hover:opacity-90">
                                     <Image
                                       src="/images/CS50x.png"
                                       alt={`${cert.name} Thumbnail`}
-                                      width={150}
-                                      height={106}
-                                      className="rounded shadow-md cursor-pointer hover:opacity-80 transition-opacity transform hover:scale-105"
+                                      width={200}
+                                      height={120}
+                                      className="w-full h-auto object-cover"
                                       data-ai-hint="certificate document"
                                     />
                                   </button>
@@ -91,6 +91,138 @@ export default function AboutSection() {
                                   </DialogHeader>
                                   <Image
                                     src="/images/CS50x.png"
+                                    alt={`${cert.name} - ${t.resume.name}`}
+                                    width={1200}
+                                    height={849}
+                                    className="rounded-md w-full h-auto"
+                                  />
+                                </DialogContent>
+                              </Dialog>
+                            </div>
+                          )}
+                          {cert.id === "cs50ai" && (
+                            <div className="mt-2 pl-7">
+                              <Dialog>
+                                <DialogTrigger asChild>
+                                  <button aria-label={`View ${cert.name} Certificate`} className="outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-md overflow-hidden shadow-md max-w-[200px] border border-border/50 transition-transform duration-300 hover:scale-105 hover:opacity-90">
+                                    <Image
+                                      src="/images/CS50AI.png"
+                                      alt={`${cert.name} Thumbnail`}
+                                      width={200}
+                                      height={120}
+                                      className="w-full h-auto object-cover"
+                                      data-ai-hint="certificate document"
+                                    />
+                                  </button>
+                                </DialogTrigger>
+                                <DialogContent className="max-w-3xl p-1 sm:p-2 md:p-3 bg-background overflow-auto">
+                                  <DialogHeader className="sr-only">
+                                    <DialogTitle>{cert.name} Certificate</DialogTitle>
+                                    <DialogDescription>
+                                      Expanded view of {t.resume.name}'s {cert.name} Certificate of Completion from {cert.issuer}.
+                                    </DialogDescription>
+                                  </DialogHeader>
+                                  <Image
+                                    src="/images/CS50AI.png"
+                                    alt={`${cert.name} - ${t.resume.name}`}
+                                    width={1200}
+                                    height={849}
+                                    className="rounded-md w-full h-auto"
+                                  />
+                                </DialogContent>
+                              </Dialog>
+                            </div>
+                          )}
+                          {cert.id === "cs50c" && (
+                            <div className="mt-2 pl-7">
+                              <Dialog>
+                                <DialogTrigger asChild>
+                                  <button aria-label={`View ${cert.name} Certificate`} className="outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-md overflow-hidden shadow-md max-w-[200px] border border-border/50 transition-transform duration-300 hover:scale-105 hover:opacity-90">
+                                    <Image
+                                      src="/images/CS50 Cybersecurity.png"
+                                      alt={`${cert.name} Thumbnail`}
+                                      width={200}
+                                      height={120}
+                                      className="w-full h-auto object-cover"
+                                      data-ai-hint="certificate document"
+                                    />
+                                  </button>
+                                </DialogTrigger>
+                                <DialogContent className="max-w-3xl p-1 sm:p-2 md:p-3 bg-background overflow-auto">
+                                  <DialogHeader className="sr-only">
+                                    <DialogTitle>{cert.name} Certificate</DialogTitle>
+                                    <DialogDescription>
+                                      Expanded view of {t.resume.name}'s {cert.name} Certificate of Completion from {cert.issuer}.
+                                    </DialogDescription>
+                                  </DialogHeader>
+                                  <Image
+                                    src="/images/CS50 Cybersecurity.png"
+                                    alt={`${cert.name} - ${t.resume.name}`}
+                                    width={1200}
+                                    height={849}
+                                    className="rounded-md w-full h-auto"
+                                  />
+                                </DialogContent>
+                              </Dialog>
+                            </div>
+                          )}
+                          {cert.id === "fcc-frontend" && (
+                            <div className="mt-2 pl-7">
+                              <Dialog>
+                                <DialogTrigger asChild>
+                                  <button aria-label={`View ${cert.name} Certificate`} className="outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-md overflow-hidden shadow-md max-w-[200px] border border-border/50 transition-transform duration-300 hover:scale-105 hover:opacity-90">
+                                    <Image
+                                      src="/images/FrontEnd.png"
+                                      alt={`${cert.name} Thumbnail`}
+                                      width={200}
+                                      height={120}
+                                      className="w-full h-auto object-cover"
+                                      data-ai-hint="certificate document"
+                                    />
+                                  </button>
+                                </DialogTrigger>
+                                <DialogContent className="max-w-3xl p-1 sm:p-2 md:p-3 bg-background overflow-auto">
+                                  <DialogHeader className="sr-only">
+                                    <DialogTitle>{cert.name} Certificate</DialogTitle>
+                                    <DialogDescription>
+                                      Expanded view of {t.resume.name}'s {cert.name} Certificate of Completion from {cert.issuer}.
+                                    </DialogDescription>
+                                  </DialogHeader>
+                                  <Image
+                                    src="/images/FrontEnd.png"
+                                    alt={`${cert.name} - ${t.resume.name}`}
+                                    width={1200}
+                                    height={849}
+                                    className="rounded-md w-full h-auto"
+                                  />
+                                </DialogContent>
+                              </Dialog>
+                            </div>
+                          )}
+                          {cert.id === "dio" && (
+                            <div className="mt-2 pl-7">
+                              <Dialog>
+                                <DialogTrigger asChild>
+                                  <button aria-label={`View ${cert.name} Certificate`} className="outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-md overflow-hidden shadow-md max-w-[200px] border border-border/50 transition-transform duration-300 hover:scale-105 hover:opacity-90">
+                                    <Image
+                                      src="/images/DIO.png"
+                                      alt={`${cert.name} Thumbnail`}
+                                      width={200}
+                                      height={120}
+                                      className="w-full h-auto object-cover"
+                                      data-ai-hint="certificate document"
+                                    />
+                                  </button>
+                                </DialogTrigger>
+                                <DialogContent className="max-w-3xl p-1 sm:p-2 md:p-3 bg-background overflow-auto">
+                                  <DialogHeader className="sr-only">
+                                    <DialogTitle>{cert.name} Certificate</DialogTitle>
+                                    <DialogDescription>
+                                      Expanded view of {t.resume.name}'s {cert.name} Certificate of Completion from {cert.issuer}.
+                                    </DialogDescription>
+                                  </DialogHeader>
+                                  <Image
+                                    src="/images/DIO.png"
                                     alt={`${cert.name} - ${t.resume.name}`}
                                     width={1200}
                                     height={849}
@@ -141,6 +273,38 @@ export default function AboutSection() {
                             </span>
                           </div>
                           {/* Same image logic issue here */}
+                          {ach.id === "hackathon-vox" && (
+                            <div className="mt-2 pl-7">
+                              <Dialog>
+                                <DialogTrigger asChild>
+                                  <button aria-label="View MediMentor Hackathon Win" className="outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-md overflow-hidden shadow-md max-w-[200px] border border-border/50 transition-transform duration-300 hover:scale-105 hover:opacity-90">
+                                    <Image
+                                      src="/images/MediMentor.jpg"
+                                      alt="MediMentor Hackathon Win"
+                                      width={200}
+                                      height={120}
+                                      className="w-full h-auto object-cover"
+                                    />
+                                  </button>
+                                </DialogTrigger>
+                                <DialogContent className="max-w-4xl p-1 sm:p-2 md:p-3 bg-background overflow-auto">
+                                  <DialogHeader className="sr-only">
+                                    <DialogTitle>{ach.title}</DialogTitle>
+                                    <DialogDescription>
+                                      Expanded view of {ach.title} achievement.
+                                    </DialogDescription>
+                                  </DialogHeader>
+                                  <Image
+                                    src="/images/MediMentor.jpg"
+                                    alt="MediMentor Hackathon Win Full Size"
+                                    width={1200}
+                                    height={800}
+                                    className="rounded-md w-full h-auto"
+                                  />
+                                </DialogContent>
+                              </Dialog>
+                            </div>
+                          )}
                         </li>
                       ))}
                     </ul>

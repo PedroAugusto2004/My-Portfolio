@@ -5,7 +5,6 @@ import { Toaster } from "@/components/ui/toaster";
 import Navbar from '@/components/layout/navbar';
 import Footer from '@/components/layout/footer';
 import { ThemeProvider } from '@/components/theme-provider';
-import SmoothScrollProvider from '@/components/providers/smooth-scroll-provider';
 import ScrollReactiveBackground from '@/components/layout/scroll-reactive-background';
 import CursorLightBackground from '@/components/ui/cursor-light-background';
 import { ThemeToggle } from '@/components/theme-toggle';
@@ -28,7 +27,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${lato.variable} ${playfairDisplay.variable} scroll-smooth`} suppressHydrationWarning>
+    <html lang="en" className={`${lato.variable} ${playfairDisplay.variable}`} suppressHydrationWarning>
       <body>
         <ThemeProvider
           attribute="class"
@@ -36,20 +35,18 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <SmoothScrollProvider>
-            <LanguageProvider>
-              <ScrollReactiveBackground />
-              <CursorLightBackground />
-              <Navbar />
-              <main vaul-drawer-wrapper="" className="min-h-screen flex-1 bg-transparent">{children}</main>
-              <Footer />
-              <div className="fixed bottom-4 right-4 z-40 flex items-center gap-2"> {/* Lowered z-index to be behind sheet */}
+          <LanguageProvider>
+            <ScrollReactiveBackground />
+            <CursorLightBackground />
+            <Navbar />
+            <main vaul-drawer-wrapper="" className="min-h-screen flex-1 bg-transparent">{children}</main>
+            <Footer />
+            <div className="fixed bottom-4 right-4 z-40 flex items-center gap-2"> {/* Lowered z-index to be behind sheet */}
 
-                <ThemeToggle />
-              </div>
-              <Toaster />
-            </LanguageProvider>
-          </SmoothScrollProvider>
+              <ThemeToggle />
+            </div>
+            <Toaster />
+          </LanguageProvider>
         </ThemeProvider>
       </body>
     </html>

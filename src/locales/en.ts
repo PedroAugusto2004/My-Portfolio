@@ -26,6 +26,7 @@ export const en: Translations = {
     },
     education: {
         items: resumeData.education.map((edu) => ({
+            id: edu.id,
             degree: edu.degree,
             institution: edu.institution,
             period: edu.period,
@@ -33,6 +34,7 @@ export const en: Translations = {
     },
     certifications: {
         items: resumeData.certifications.map((cert) => ({
+            id: cert.id,
             name: cert.name,
             issuer: cert.issuer,
             year: cert.year,
@@ -40,6 +42,7 @@ export const en: Translations = {
     },
     achievements: {
         items: resumeData.achievements.map((ach) => ({
+            id: ach.id,
             title: ach.title,
             description: ach.description,
         })),
@@ -50,6 +53,7 @@ export const en: Translations = {
         technologiesUsed: 'Technologies Used:',
         visitWebsite: 'Visit Website',
         items: resumeData.experience.map((exp) => ({
+            id: exp.id,
             role: exp.role,
             company: exp.company,
             period: exp.period,

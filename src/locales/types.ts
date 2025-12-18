@@ -23,6 +23,7 @@ export interface Translations {
     };
     education: {
         items: {
+            id: string;
             degree: string;
             institution: string;
             period: string;
@@ -30,6 +31,7 @@ export interface Translations {
     };
     certifications: {
         items: {
+            id: string;
             name: string;
             issuer: string;
             year?: string | number;
@@ -37,6 +39,7 @@ export interface Translations {
     };
     achievements: {
         items: {
+            id: string;
             title: string;
             description: string;
         }[];
@@ -47,6 +50,7 @@ export interface Translations {
         technologiesUsed: string;
         visitWebsite: string;
         items: {
+            id: string;
             role: string;
             company: string;
             period: string;

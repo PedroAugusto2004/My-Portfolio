@@ -26,6 +26,7 @@ export const es: Translations = {
     education: {
         items: [
             {
+                id: "ads",
                 degree: "Licenciatura en Análisis y Desarrollo de Sistemas",
                 institution: "Universidad Estácio",
                 period: "Esperado 2026",
@@ -34,16 +35,17 @@ export const es: Translations = {
     },
     certifications: {
         items: [
-            { name: "CS50x: Introducción a la Informática", issuer: "Universidad de Harvard" },
-            { name: "CS50AI: Introducción a la Inteligencia Artificial con Python", issuer: "Universidad de Harvard" },
-            { name: "CS50C: Introducción a la Ciberseguridad", issuer: "Universidad de Harvard" },
-            { name: "Certificación de Desarrollo Front End", issuer: "freeCodeCamp" },
-            { name: "100+ horas de capacitación", issuer: "DIO (desarrollo web, nube, ingeniería de software)" },
+            { id: "cs50x", name: "CS50x: Introducción a la Informática", issuer: "Universidad de Harvard" },
+            { id: "cs50ai", name: "CS50AI: Introducción a la Inteligencia Artificial con Python", issuer: "Universidad de Harvard" },
+            { id: "cs50c", name: "CS50C: Introducción a la Ciberseguridad", issuer: "Universidad de Harvard" },
+            { id: "fcc-frontend", name: "Certificación de Desarrollo Front End", issuer: "freeCodeCamp" },
+            { id: "dio", name: "100+ horas de capacitación", issuer: "DIO (desarrollo web, nube, ingeniería de software)" },
         ]
     },
     achievements: {
         items: [
             {
+                id: "hackathon-vox",
                 title: "Ganador del Hackathon VOX ASTRA",
                 description: "Beca de patrocinadores de $300k, presentado en artículo, seleccionado entre más de 500 equipos.",
             }
@@ -56,6 +58,7 @@ export const es: Translations = {
         visitWebsite: 'Visitar Sitio Web',
         items: [
             {
+                id: "outlier",
                 role: "Especialista en Machine Learning",
                 company: "Outlier",
                 period: "Remoto • 2025 – Presente",
@@ -70,6 +73,7 @@ export const es: Translations = {
                 projectLinks: [],
             },
             {
+                id: "studyshield",
                 role: "Ingeniero Full Stack",
                 company: "StudyShield",
                 period: "2025",
@@ -90,6 +94,7 @@ export const es: Translations = {
                 ],
             },
             {
+                id: "megaphoton",
                 role: "Desarrollador Full Stack",
                 company: "Megaphoton – Energía Solar",
                 period: "Remoto • 2025",
@@ -107,6 +112,7 @@ export const es: Translations = {
                 ]
             },
             {
+                id: "medimentor",
                 role: "Desarrollador Full Stack",
                 company: "MediMentor",
                 period: "Remoto • 2024 – 2025",
@@ -123,6 +129,7 @@ export const es: Translations = {
                 ]
             },
             {
+                id: "muscles",
                 role: "Desarrollador Full Stack",
                 company: "Muscles & Balance",
                 period: "Remoto • 2023 – 2025",

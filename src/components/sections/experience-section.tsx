@@ -72,12 +72,14 @@ export default function ExperienceSection() {
     'Muscles & Balance': '/images/muscles-and-balance.png',
   };
 
-  const getImageForCompany = (company: string) => {
-    if (company.toLowerCase().includes('studyshield')) return imageMap['StudyShield'];
-    if (company.toLowerCase().includes('megaphoton')) return imageMap['Megaphoton'];
-    if (company.toLowerCase().includes('medimentor') || company.toLowerCase().includes('medimentor')) return imageMap['MediMentor'];
-    if (company.toLowerCase().includes('muscles')) return imageMap['Muscles & Balance'];
-    return '';
+  const getImageForCompany = (id: string) => {
+    switch (id) {
+      case 'studyshield': return imageMap['StudyShield'];
+      case 'megaphoton': return imageMap['Megaphoton'];
+      case 'medimentor': return imageMap['MediMentor'];
+      case 'muscles': return imageMap['Muscles & Balance'];
+      default: return '';
+    }
   };
 
   const getVisitLink = (links?: { name: string; url: string }[]) => {
@@ -179,7 +181,7 @@ export default function ExperienceSection() {
 
                           {/* Image for mobile, shown after description */}
                           {(() => {
-                            const imgSrc = getImageForCompany(exp.company);
+                            const imgSrc = getImageForCompany(exp.id);
                             const visitLink = getVisitLink(exp.projectLinks);
                             if (!imgSrc) return null;
                             return (
@@ -206,7 +208,7 @@ export default function ExperienceSection() {
 
                         {/* Image for desktop */}
                         {(() => {
-                          const imgSrc = getImageForCompany(exp.company);
+                          const imgSrc = getImageForCompany(exp.id);
                           const visitLink = getVisitLink(exp.projectLinks);
                           if (!imgSrc) return null;
                           return (
@@ -224,7 +226,7 @@ export default function ExperienceSection() {
                       {/* Technologies and Links - Full width */}
                       <div className="mt-6">
                         {(() => {
-                          const imgSrc = getImageForCompany(exp.company);
+                          const imgSrc = getImageForCompany(exp.id);
                           if (!imgSrc) return null;
                           return (
                             <div className={`order-1 ${index % 2 === 0 ? 'lg:order-2' : 'lg:order-1'}`}>

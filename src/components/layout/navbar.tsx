@@ -23,22 +23,7 @@ export default function Navbar() {
 		{ label: t.navbar.contact, href: '#contact', icon: Send },
 	];
 
-	const NavLinks = ({ onItemClick }: { onItemClick?: () => void }) => (
-		<>
-			{navItems.map((item) => (
-				<Link
-					key={item.label}
-					href={item.href}
-					onClick={onItemClick}
-					className="flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium text-foreground hover:bg-primary hover:text-primary-foreground transition-all duration-300 transform hover:scale-105"
-					aria-label={item.label}
-				>
-					<item.icon className="h-4 w-4" />
-					{item.label}
-				</Link>
-			))}
-		</>
-	);
+
 
 	return (
 		<header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -50,7 +35,17 @@ export default function Navbar() {
 
 				<div className="flex items-center gap-6">
 					<nav className="hidden md:flex items-center space-x-1">
-						<NavLinks />
+						{navItems.map((item) => (
+							<Link
+								key={item.label}
+								href={item.href}
+								className="flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium text-foreground hover:bg-primary hover:text-primary-foreground transition-all duration-300 transform hover:scale-105"
+								aria-label={item.label}
+							>
+								<item.icon className="h-4 w-4" />
+								{item.label}
+							</Link>
+						))}
 					</nav>
 
 					<LanguageSwitcher />
