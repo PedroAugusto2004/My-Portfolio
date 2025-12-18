@@ -4,7 +4,7 @@
 import { useForm, type SubmitHandler } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import { useState, useTransition } from 'react';
+import { useState, useTransition, useMemo } from 'react';
 import SectionTitle from '@/components/ui/section-title-component';
 import AnimatedScrollWrapper from '@/components/ui/animated-scroll-wrapper';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
@@ -17,14 +17,13 @@ import { resumeData } from '@/config/resume-data';
 import { Mail, Linkedin, Github, Send, Loader2 } from 'lucide-react';
 import { WhatsAppIcon } from '@/components/ui/whatsapp-icon';
 import Link from 'next/link';
+import { useTranslation } from '@/context/LanguageContext';
 
-const contactFormSchema = z.object({
-  name: z.string().min(2, { message: "Name must be at least 2 characters." }),
-  email: z.string().email({ message: "Please enter a valid email address." }),
-  message: z.string().min(10, { message: "Message must be at least 10 characters." }),
-});
-
-type ContactFormData = z.infer<typeof contactFormSchema>;
+type ContactFormData = {
+  name: string;
+  email: string;
+  message: string;
+};
 
 async function submitContactForm(data: ContactFormData): Promise<{ success: boolean; message: string }> {
   try {
@@ -41,8 +40,16 @@ async function submitContactForm(data: ContactFormData): Promise<{ success: bool
 
 
 export default function ContactSection() {
+  const { t } = useTranslation();
   const [isPending, startTransition] = useTransition();
   const { toast } = useToast();
+
+  const contactFormSchema = useMemo(() => z.object({
+    name: z.string().min(2, { message: t.contact.validationName }),
+    email: z.string().email({ message: t.contact.validationEmail }),
+    message: z.string().min(10, { message: t.contact.validationMessage }),
+  }), [t]);
+
   const { register, handleSubmit, reset, formState: { errors } } = useForm<ContactFormData>({
     resolver: zodResolver(contactFormSchema),
   });
@@ -53,7 +60,7 @@ export default function ContactSection() {
         const response = await submitContactForm(data);
         if (response.success) {
           toast({
-            title: "Message Sent!",
+            title: t.contact.messageSent,
             description: response.message,
           });
           reset();
@@ -62,7 +69,7 @@ export default function ContactSection() {
         }
       } catch (error) {
         toast({
-          title: "Error Sending Message",
+          title: t.contact.errorSending,
           description: error instanceof Error ? error.message : "An unexpected error occurred.",
           variant: "destructive",
         });
@@ -74,9 +81,9 @@ export default function ContactSection() {
     <section id="contact" className="bg-transparent">
       <div className="container mx-auto max-w-screen-lg px-4">
         <AnimatedScrollWrapper>
-          <SectionTitle>Get In Touch</SectionTitle>
+          <SectionTitle>{t.contact.title}</SectionTitle>
           <p className="mb-10 text-center text-lg text-muted-foreground md:text-xl">
-            Have a project in mind, a question, or just want to connect? Feel free to reach out!
+            {t.contact.intro}
           </p>
         </AnimatedScrollWrapper>
 
@@ -85,34 +92,34 @@ export default function ContactSection() {
             <Card className="transition-shadow duration-300">
               <CardHeader>
                 <CardTitle className="text-2xl text-primary flex items-center gap-2">
-                  <Send className="h-6 w-6" /> Send Me a Message
+                  <Send className="h-6 w-6" /> {t.contact.sendMessage}
                 </CardTitle>
-                <CardDescription>I'll do my best to respond as soon as possible.</CardDescription>
+                <CardDescription>{t.contact.formDescription}</CardDescription>
               </CardHeader>
               <form onSubmit={handleSubmit(onSubmit)}>
                 <CardContent className="space-y-4">
                   <div>
-                    <Label htmlFor="name">Full Name</Label>
-                    <Input id="name" {...register("name")} placeholder="Your Name" className="mt-1" />
+                    <Label htmlFor="name">{t.contact.fullName}</Label>
+                    <Input id="name" {...register("name")} placeholder={t.contact.yourName} className="mt-1" />
                     {errors.name && <p className="text-sm text-destructive mt-1">{errors.name.message}</p>}
                   </div>
                   <div>
-                    <Label htmlFor="email">Email Address</Label>
-                    <Input id="email" type="email" {...register("email")} placeholder="your.email@example.com" className="mt-1" />
+                    <Label htmlFor="email">{t.contact.emailAddress}</Label>
+                    <Input id="email" type="email" {...register("email")} placeholder={t.contact.yourEmailPlaceholder} className="mt-1" />
                     {errors.email && <p className="text-sm text-destructive mt-1">{errors.email.message}</p>}
                   </div>
                   <div>
-                    <Label htmlFor="message">Message</Label>
-                    <Textarea id="message" {...register("message")} rows={5} placeholder="Your message..." className="mt-1" />
+                    <Label htmlFor="message">{t.contact.message}</Label>
+                    <Textarea id="message" {...register("message")} rows={5} placeholder={t.contact.yourMessage} className="mt-1" />
                     {errors.message && <p className="text-sm text-destructive mt-1">{errors.message.message}</p>}
                   </div>
                 </CardContent>
                 <CardFooter>
                   <Button type="submit" className="w-full hover:bg-primary/80" disabled={isPending} size="lg">
                     {isPending ? (
-                      <><Loader2 className="mr-2 h-5 w-5 animate-spin" /> Sending...</>
+                      <><Loader2 className="mr-2 h-5 w-5 animate-spin" /> {t.contact.sending}</>
                     ) : (
-                      <><Send className="mr-2 h-5 w-5" /> Send Message</>
+                      <><Send className="mr-2 h-5 w-5" /> {t.contact.sendMessage}</>
                     )}
                   </Button>
                 </CardFooter>
@@ -122,9 +129,9 @@ export default function ContactSection() {
 
           <AnimatedScrollWrapper delay={0.2} className="space-y-6">
             <Card className="p-6 transition-shadow duration-300">
-              <h3 className="text-2xl font-semibold text-primary mb-4">Contact Information</h3>
+              <h3 className="text-2xl font-semibold text-primary mb-4">{t.contact.contactInfo}</h3>
               <p className="text-muted-foreground mb-4">
-                Alternatively, you can reach me through the following channels:
+                {t.contact.alternatively}
               </p>
               <div className="space-y-4">
                 <Link href={`https://wa.me/${resumeData.contact.whatsapp.replace(/\D/g, '')}`} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 group hover:text-primary transition-colors">
@@ -145,9 +152,9 @@ export default function ContactSection() {
                 </Link>
               </div>
               <div className="mt-6 p-4 rounded-lg">
-                <h4 className="font-semibold text-primary mb-2">Preferred Contact Method:</h4>
+                <h4 className="font-semibold text-primary mb-2">{t.contact.preferredMethod}</h4>
                 <p className="text-sm text-muted-foreground">
-                  Email is generally the quickest way to get a response for inquiries. For professional networking, LinkedIn is also a great option.
+                  {t.contact.preferredMethodText}
                 </p>
               </div>
             </Card>

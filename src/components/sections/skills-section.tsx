@@ -1,7 +1,10 @@
 
+"use client";
+
 import { resumeData, type SkillCategory } from '@/config/resume-data';
 import SectionTitle from '@/components/ui/section-title-component';
 import AnimatedScrollWrapper from '@/components/ui/animated-scroll-wrapper';
+import { useTranslation } from '@/context/LanguageContext';
 
 // React Icons - Technology logos
 import {
@@ -189,17 +192,18 @@ const MarqueeRow = ({
 };
 
 export default function SkillsSection() {
+  const { t } = useTranslation();
   const skillRows = getSkillRows();
 
   return (
     <section id="skills" className="py-16 sm:py-20 overflow-hidden">
       <div className="container mx-auto max-w-screen-xl px-4">
         <AnimatedScrollWrapper>
-          <SectionTitle>My Expertise</SectionTitle>
+          <SectionTitle>{t.skills.title}</SectionTitle>
         </AnimatedScrollWrapper>
 
         <p className="text-center text-muted-foreground mb-8 max-w-2xl mx-auto">
-          Technologies and tools I work with to build modern, scalable applications
+          {t.skills.subtitle}
         </p>
       </div>
 
@@ -211,3 +215,4 @@ export default function SkillsSection() {
     </section>
   );
 }
+

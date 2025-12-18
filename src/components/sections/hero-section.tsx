@@ -1,3 +1,5 @@
+"use client";
+
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { resumeData } from '@/config/resume-data';
@@ -5,8 +7,11 @@ import { Github, Linkedin, Mail, FileText } from 'lucide-react';
 import { WhatsAppIcon } from '@/components/ui/whatsapp-icon';
 import AnimatedScrollWrapper from '@/components/ui/animated-scroll-wrapper';
 import AnimatedSignature from '@/components/ui/animated-signature';
+import { useTranslation } from '@/context/LanguageContext';
 
 export default function HeroSection() {
+  const { t } = useTranslation();
+
   return (
     <section id="hero" className="relative min-h-[calc(100vh-4rem)] flex items-center justify-center py-12 md:py-20 lg:py-24 bg-transparent">
       <div className="container mx-auto max-w-screen-lg px-4 text-center">
@@ -17,25 +22,25 @@ export default function HeroSection() {
               <AnimatedSignature className="animated-signature" />
             </span>
             <h1 className="hero-header fancy-header">
-              {resumeData.name}
+              {t.resume.name}
             </h1>
           </div>
         </AnimatedScrollWrapper>
         <AnimatedScrollWrapper delay={0.1}>
           <p className="mt-4 text-xl font-medium text-foreground/80 sm:text-2xl md:text-3xl">
-            {resumeData.title}
+            {t.resume.title}
           </p>
         </AnimatedScrollWrapper>
 
         <AnimatedScrollWrapper delay={0.3} className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
           <Button asChild size="lg" className="w-full sm:w-auto shadow-lg hover:shadow-xl transition-shadow hover:bg-primary/80">
             <Link href="#contact">
-              <Mail className="mr-2 h-5 w-5" /> Get in Touch
+              <Mail className="mr-2 h-5 w-5" /> {t.hero.getInTouch}
             </Link>
           </Button>
           <Button asChild variant="outline" size="lg" className="w-full sm:w-auto shadow-lg hover:shadow-xl transition-shadow hover:bg-accent/80">
             <Link href="#experience">
-              <FileText className="mr-2 h-5 w-5" /> View My Work
+              <FileText className="mr-2 h-5 w-5" /> {t.hero.viewMyWork}
             </Link>
           </Button>
         </AnimatedScrollWrapper>

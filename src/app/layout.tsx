@@ -9,6 +9,8 @@ import SmoothScrollProvider from '@/components/providers/smooth-scroll-provider'
 import ScrollReactiveBackground from '@/components/layout/scroll-reactive-background';
 import CursorLightBackground from '@/components/ui/cursor-light-background';
 import { ThemeToggle } from '@/components/theme-toggle';
+import { LanguageProvider } from '@/context/LanguageContext';
+
 
 
 export const metadata: Metadata = {
@@ -35,15 +37,18 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <SmoothScrollProvider>
-            <ScrollReactiveBackground />
-            <CursorLightBackground />
-            <Navbar />
-            <main vaul-drawer-wrapper="" className="min-h-screen flex-1 bg-transparent">{children}</main>
-            <Footer />
-            <div className="fixed bottom-4 right-4 z-40"> {/* Lowered z-index to be behind sheet */}
-              <ThemeToggle />
-            </div>
-            <Toaster />
+            <LanguageProvider>
+              <ScrollReactiveBackground />
+              <CursorLightBackground />
+              <Navbar />
+              <main vaul-drawer-wrapper="" className="min-h-screen flex-1 bg-transparent">{children}</main>
+              <Footer />
+              <div className="fixed bottom-4 right-4 z-40 flex items-center gap-2"> {/* Lowered z-index to be behind sheet */}
+
+                <ThemeToggle />
+              </div>
+              <Toaster />
+            </LanguageProvider>
           </SmoothScrollProvider>
         </ThemeProvider>
       </body>

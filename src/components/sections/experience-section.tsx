@@ -1,5 +1,7 @@
 
-import { resumeData, type ExperienceEntry } from '@/config/resume-data';
+"use client";
+
+import { resumeData } from '@/config/resume-data'; // Keeping for type if needed, but data comes from context
 import SectionTitle from '@/components/ui/section-title-component';
 import AnimatedScrollWrapper from '@/components/ui/animated-scroll-wrapper';
 import { Card } from '@/components/ui/card';
@@ -8,6 +10,7 @@ import { Badge } from '@/components/ui/badge';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
+import { useTranslation } from '@/context/LanguageContext';
 
 const ProjectShowcase = ({ src, alt, link }: { src: string; alt: string; link?: string }) => {
   return (
@@ -60,6 +63,8 @@ const ProjectShowcase = ({ src, alt, link }: { src: string; alt: string; link?: 
 };
 
 export default function ExperienceSection() {
+  const { t } = useTranslation();
+
   const imageMap: Record<string, string> = {
     'StudyShield': '/images/studyshield.png',
     'Megaphoton': '/images/megaphoton.png',
@@ -76,17 +81,18 @@ export default function ExperienceSection() {
   };
 
   const getVisitLink = (links?: { name: string; url: string }[]) => {
-    return links?.find(l => l.name.toLowerCase().includes('visit'))?.url;
+    return links?.find(l => l.name.toLowerCase().includes('visit') || l.name.toLowerCase().includes('visitar'))?.url;
   };
+
   return (
     <section id="experience" className="bg-transparent py-16 sm:py-20">
       <div className="container mx-auto max-w-screen-xl px-4">
         <AnimatedScrollWrapper>
-          <SectionTitle>Experience & Projects</SectionTitle>
+          <SectionTitle>{t.experience.title}</SectionTitle>
         </AnimatedScrollWrapper>
 
         <div className="mt-12 space-y-12">
-          {resumeData.experience.map((exp: ExperienceEntry, index: number) => (
+          {t.experience.items.map((exp, index) => (
             <AnimatedScrollWrapper key={index} delay={index * 0.1}>
               <Card className="transition-shadow duration-300">
                 <div className="p-4 sm:p-6 md:p-8">
@@ -105,7 +111,7 @@ export default function ExperienceSection() {
 
                       <p className="text-foreground/80 mb-6 leading-relaxed">{exp.description}</p>
 
-                      <h4 className="font-semibold text-md text-primary mb-3">Key Responsibilities:</h4>
+                      <h4 className="font-semibold text-md text-primary mb-3">{t.experience.keyResponsibilities}</h4>
                       <ul className="space-y-2.5 mb-6">
                         {exp.responsibilities.map((resp, i) => (
                           <li key={i} className="flex items-start gap-2.5 text-sm text-foreground/75">
@@ -117,7 +123,7 @@ export default function ExperienceSection() {
 
                       {exp.technologies && exp.technologies.length > 0 && (
                         <div className="mb-6">
-                          <h4 className="font-semibold text-md text-primary mb-3">Technologies Used:</h4>
+                          <h4 className="font-semibold text-md text-primary mb-3">{t.experience.technologiesUsed}</h4>
                           <div className="flex flex-wrap gap-3">
                             {exp.technologies.map((tech) => (
                               <Badge key={tech} variant="secondary" className="px-3 py-1 text-sm bg-primary/10 text-primary border-primary/30 hover:bg-primary/20 transition-colors">
@@ -132,7 +138,7 @@ export default function ExperienceSection() {
                         <div className="flex flex-wrap gap-3">
                           {exp.projectLinks.map((link, linkIndex) => {
                             const isGithubLink = link.name.toLowerCase().includes('github');
-                            const isVisitLink = link.name.toLowerCase().includes('visit');
+                            const isVisitLink = link.name.toLowerCase().includes('visit') || link.name.toLowerCase().includes('visitar');
 
                             return (
                               <Button
@@ -172,7 +178,6 @@ export default function ExperienceSection() {
                           <p className="text-foreground/80 mb-6 leading-relaxed">{exp.description}</p>
 
                           {/* Image for mobile, shown after description */}
-                          {/* Image for mobile, shown after description */}
                           {(() => {
                             const imgSrc = getImageForCompany(exp.company);
                             const visitLink = getVisitLink(exp.projectLinks);
@@ -188,7 +193,7 @@ export default function ExperienceSection() {
                             );
                           })()}
 
-                          <h4 className="font-semibold text-md text-primary mb-3">Key Responsibilities:</h4>
+                          <h4 className="font-semibold text-md text-primary mb-3">{t.experience.keyResponsibilities}</h4>
                           <ul className="space-y-2.5 mb-6">
                             {exp.responsibilities.slice(0, 4).map((resp, i) => (
                               <li key={i} className="flex items-start gap-2.5 text-sm text-foreground/75">
@@ -199,7 +204,6 @@ export default function ExperienceSection() {
                           </ul>
                         </div>
 
-                        {/* Image for desktop */}
                         {/* Image for desktop */}
                         {(() => {
                           const imgSrc = getImageForCompany(exp.company);
@@ -226,7 +230,7 @@ export default function ExperienceSection() {
                             <div className={`order-1 ${index % 2 === 0 ? 'lg:order-2' : 'lg:order-1'}`}>
                               {exp.technologies && exp.technologies.length > 0 && (
                                 <div className="mb-6">
-                                  <h4 className="font-semibold text-md text-primary mb-3">Technologies Used:</h4>
+                                  <h4 className="font-semibold text-md text-primary mb-3">{t.experience.technologiesUsed}</h4>
                                   <div className="flex flex-wrap gap-2">
                                     {exp.technologies.map((tech) => (
                                       <Badge key={tech} variant="secondary" className="px-3 py-1 text-sm bg-primary/10 text-primary border-primary/30 hover:bg-primary/20 transition-colors">
@@ -241,7 +245,7 @@ export default function ExperienceSection() {
                                 <div className="flex flex-wrap gap-3">
                                   {exp.projectLinks.map((link, linkIndex) => {
                                     const isGithubLink = link.name.toLowerCase().includes('github');
-                                    const isVisitLink = link.name.toLowerCase().includes('visit');
+                                    const isVisitLink = link.name.toLowerCase().includes('visit') || link.name.toLowerCase().includes('visitar');
 
                                     return (
                                       <Button
