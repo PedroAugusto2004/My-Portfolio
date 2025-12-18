@@ -90,7 +90,7 @@ export const pt: Translations = {
                 technologies: ["React 18", "TypeScript", "Vite", "Google Gemini AI", "Supabase", "PWA", "PostgreSQL", "TailwindCSS"],
                 projectLinks: [
                     { name: "Ver Código no GitHub", url: "https://github.com/PedroAugusto2004/StudyShield" },
-                    { name: "Visitar Site", url: "https://study-shield-gamma.vercel.app/" }
+                    { name: "Visitar Site", url: "https://www.studyshield.site/" }
                 ],
             },
             {
@@ -107,8 +107,8 @@ export const pt: Translations = {
                 ],
                 technologies: ["React", "TypeScript", "Google Gemini AI", "RAG", "Vercel AI SDK", "TailwindCSS", "Node.js"],
                 projectLinks: [
-                    { name: "Ver Código no GitHub", url: "https://github.com/PedroAugusto2004/megaphoton-site" },
-                    { name: "Visitar Site", url: "https://megaphoton.vercel.app/" }
+                    { name: "Ver Código no GitHub", url: "https://github.com/PedroAugusto2004/megaphoton" },
+                    { name: "Visitar Site", url: "https://www.megaphoton.com.br/" }
                 ]
             },
             {
@@ -125,7 +125,8 @@ export const pt: Translations = {
                 ],
                 technologies: ["React", "AWS Lambda", "API Gateway", "Cognito", "DynamoDB", "Isabel Healthcare API", "AWS Amplify"],
                 projectLinks: [
-                    { name: "Visitar Site", url: "https://medimentor-health.vercel.app/" }
+                    { name: "Ver Código no GitHub", url: "https://github.com/PedroAugusto2004/MediMentor" },
+                    { name: "Visitar Site", url: "https://main.do8zwgfpt20yc.amplifyapp.com" }
                 ]
             },
             {
@@ -141,7 +142,8 @@ export const pt: Translations = {
                 ],
                 technologies: ["React", "Node.js", "Express", "MongoDB", "AWS Amplify", "Chart.js", "Framer Motion"],
                 projectLinks: [
-                    { name: "Visitar Site", url: "https://musclesandbalance.vercel.app/" }
+                    { name: "Ver Código no GitHub", url: "https://github.com/PedroAugusto2004/Muscles-e-Balance" },
+                    { name: "Visitar Site", url: "https://muscles-and-balance-7.web.app" }
                 ]
             },
         ],
