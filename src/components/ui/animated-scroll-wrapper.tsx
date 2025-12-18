@@ -1,70 +1,56 @@
 "use client";
 
 import type { HTMLAttributes } from 'react';
-import { useEffect, useRef, useState } from 'react';
+import { useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
 import { cn } from '@/lib/utils';
 
 interface AnimatedScrollWrapperProps extends HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;
   animationClassName?: string;
   initialClassName?: string;
-  delay?: string; // e.g., 'delay-200'
-  as?: keyof JSX.IntrinsicElements;
+  delay?: number; // delay in seconds
+  as?: any;
 }
 
 const AnimatedScrollWrapper: React.FC<AnimatedScrollWrapperProps> = ({
   children,
   className,
-  animationClassName = 'animate-fade-in-up',
-  initialClassName = 'opacity-0',
-  delay = '',
-  as: Tag = 'div',
+  animationClassName, // We'll handle animations via variants now
+  initialClassName,
+  delay = 0,
+  as = 'div',
   ...props
 }) => {
-  const [isVisible, setIsVisible] = useState(false);
-  const ref = useRef<HTMLDivElement | null>(null);
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.2 });
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          if (ref.current) { // Check if ref.current is not null
-            observer.unobserve(ref.current);
-          }
-        }
-      },
-      {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.1, // Adjust as needed, 0.1 means 10% of the element is visible
+  const MotionTag = (motion as any)[as] || motion.div;
+
+  const variants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: [0.21, 0.47, 0.32, 0.98],
+        delay: delay
       }
-    );
-
-    if (ref.current) {
-      observer.observe(ref.current);
     }
-
-    return () => {
-      if (ref.current) { // Check if ref.current is not null
-        observer.unobserve(ref.current);
-      }
-    };
-  }, []);
+  };
 
   return (
-    <Tag
-      ref={ref as any}
-      className={cn(
-        'transition-all duration-700 ease-out',
-        initialClassName,
-        isVisible && `${animationClassName} ${delay} opacity-100`,
-        className
-      )}
+    <MotionTag
+      ref={ref}
+      initial="hidden"
+      animate={isInView ? "visible" : "hidden"}
+      variants={variants}
+      className={cn(className)}
       {...props}
     >
       {children}
-    </Tag>
+    </MotionTag>
   );
 };
 

@@ -27,7 +27,7 @@ export default function Navbar() {
 					key={item.label}
 					href={item.href}
 					onClick={onItemClick}
-					className="flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium text-foreground hover:bg-accent hover:text-primary transition-colors"
+					className="flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium text-foreground hover:bg-primary hover:text-primary-foreground transition-all duration-300 transform hover:scale-105"
 					aria-label={item.label}
 				>
 					<item.icon className="h-4 w-4" />
@@ -73,7 +73,7 @@ export default function Navbar() {
 										key={item.label}
 										href={item.href}
 										onClick={() => setMobileMenuOpen(false)}
-										className="group flex items-center gap-4 text-lg font-medium text-muted-foreground hover:text-foreground transition-colors nav-item-animate"
+										className="group flex items-center gap-4 text-lg font-medium text-muted-foreground hover:bg-primary hover:text-primary-foreground p-3 rounded-lg transition-all duration-300 nav-item-animate"
 										aria-label={item.label}
 									>
 										<item.icon className="h-5 w-5" />
@@ -84,22 +84,22 @@ export default function Navbar() {
 							<div className="mt-auto pt-8 border-t border-border/40">
 								<div className="flex justify-center space-x-6 mb-6">
 									{resumeData.contact.whatsapp && (
-										<Link href={`https://wa.me/${resumeData.contact.whatsapp.replace(/\D/g, '')}`} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="text-muted-foreground hover:text-primary transition-colors hover:scale-110 transform">
+										<Link href={`https://wa.me/${resumeData.contact.whatsapp.replace(/\D/g, '')}`} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="text-muted-foreground hover:text-foreground transition-colors hover:scale-110 transform">
 											<WhatsAppIcon className="h-6 w-6" />
 										</Link>
 									)}
 									{resumeData.contact.github && (
-										<Link href={resumeData.contact.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile" className="text-muted-foreground hover:text-primary transition-colors hover:scale-110 transform">
+										<Link href={resumeData.contact.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile" className="text-muted-foreground hover:text-foreground transition-colors hover:scale-110 transform">
 											<Github className="h-6 w-6" />
 										</Link>
 									)}
 									{resumeData.contact.linkedin && (
-										<Link href={resumeData.contact.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile" className="text-muted-foreground hover:text-primary transition-colors hover:scale-110 transform">
+										<Link href={resumeData.contact.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile" className="text-muted-foreground hover:text-foreground transition-colors hover:scale-110 transform">
 											<Linkedin className="h-6 w-6" />
 										</Link>
 									)}
 									{resumeData.contact.email && (
-										<Link href={`mailto:${resumeData.contact.email}`} aria-label="Email" className="text-muted-foreground hover:text-primary transition-colors hover:scale-110 transform">
+										<Link href={`mailto:${resumeData.contact.email}`} aria-label="Email" className="text-muted-foreground hover:text-foreground transition-colors hover:scale-110 transform">
 											<Mail className="h-6 w-6" />
 										</Link>
 									)}

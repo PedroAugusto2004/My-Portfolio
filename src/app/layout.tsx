@@ -5,6 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import Navbar from '@/components/layout/navbar';
 import Footer from '@/components/layout/footer';
 import { ThemeProvider } from '@/components/theme-provider';
+import SmoothScrollProvider from '@/components/providers/smooth-scroll-provider';
 import ScrollReactiveBackground from '@/components/layout/scroll-reactive-background';
 import CursorLightBackground from '@/components/ui/cursor-light-background';
 import { ThemeToggle } from '@/components/theme-toggle';
@@ -33,15 +34,17 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <ScrollReactiveBackground />
-          <CursorLightBackground />
-          <Navbar />
-          <main vaul-drawer-wrapper="" className="min-h-screen flex-1 bg-transparent">{children}</main>
-          <Footer />
-          <div className="fixed bottom-4 right-4 z-40"> {/* Lowered z-index to be behind sheet */}
-            <ThemeToggle />
-          </div>
-          <Toaster />
+          <SmoothScrollProvider>
+            <ScrollReactiveBackground />
+            <CursorLightBackground />
+            <Navbar />
+            <main vaul-drawer-wrapper="" className="min-h-screen flex-1 bg-transparent">{children}</main>
+            <Footer />
+            <div className="fixed bottom-4 right-4 z-40"> {/* Lowered z-index to be behind sheet */}
+              <ThemeToggle />
+            </div>
+            <Toaster />
+          </SmoothScrollProvider>
         </ThemeProvider>
       </body>
     </html>

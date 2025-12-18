@@ -73,7 +73,7 @@ export default function ContactSection() {
   return (
     <section id="contact" className="bg-transparent">
       <div className="container mx-auto max-w-screen-lg px-4">
-        <AnimatedScrollWrapper animationClassName="animate-fade-in-up">
+        <AnimatedScrollWrapper>
           <SectionTitle>Get In Touch</SectionTitle>
           <p className="mb-10 text-center text-lg text-muted-foreground md:text-xl">
             Have a project in mind, a question, or just want to connect? Feel free to reach out!
@@ -81,7 +81,7 @@ export default function ContactSection() {
         </AnimatedScrollWrapper>
 
         <div className="grid md:grid-cols-2 gap-10 items-start">
-          <AnimatedScrollWrapper delay="delay-100" animationClassName="animate-fade-in-up">
+          <AnimatedScrollWrapper delay={0.1}>
             <Card className="transition-shadow duration-300">
               <CardHeader>
                 <CardTitle className="text-2xl text-primary flex items-center gap-2">
@@ -120,7 +120,7 @@ export default function ContactSection() {
             </Card>
           </AnimatedScrollWrapper>
 
-          <AnimatedScrollWrapper delay="delay-200" className="space-y-6" animationClassName="animate-fade-in-up">
+          <AnimatedScrollWrapper delay={0.2} className="space-y-6">
             <Card className="p-6 transition-shadow duration-300">
               <h3 className="text-2xl font-semibold text-primary mb-4">Contact Information</h3>
               <p className="text-muted-foreground mb-4">

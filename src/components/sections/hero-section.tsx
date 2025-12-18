@@ -10,7 +10,7 @@ export default function HeroSection() {
   return (
     <section id="hero" className="relative min-h-[calc(100vh-4rem)] flex items-center justify-center py-12 md:py-20 lg:py-24 bg-transparent">
       <div className="container mx-auto max-w-screen-lg px-4 text-center">
-        <AnimatedScrollWrapper animationClassName="animate-fade-in-up">
+        <AnimatedScrollWrapper>
           <div className="flex flex-col items-center">
             <span className="mb-2">
               {/* Animated SVG Signature */}
@@ -21,13 +21,13 @@ export default function HeroSection() {
             </h1>
           </div>
         </AnimatedScrollWrapper>
-        <AnimatedScrollWrapper animationClassName="animate-fade-in-up" delay="delay-100">
+        <AnimatedScrollWrapper delay={0.1}>
           <p className="mt-4 text-xl font-medium text-foreground/80 sm:text-2xl md:text-3xl">
             {resumeData.title}
           </p>
         </AnimatedScrollWrapper>
-        
-        <AnimatedScrollWrapper animationClassName="animate-fade-in-up" delay="delay-300" className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+
+        <AnimatedScrollWrapper delay={0.3} className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
           <Button asChild size="lg" className="w-full sm:w-auto shadow-lg hover:shadow-xl transition-shadow hover:bg-primary/80">
             <Link href="#contact">
               <Mail className="mr-2 h-5 w-5" /> Get in Touch
@@ -40,7 +40,7 @@ export default function HeroSection() {
           </Button>
         </AnimatedScrollWrapper>
 
-        <AnimatedScrollWrapper animationClassName="animate-fade-in-up" delay="delay-400" className="mt-12 flex justify-center space-x-6">
+        <AnimatedScrollWrapper delay={0.4} className="mt-12 flex justify-center space-x-6">
           {resumeData.contact.whatsapp && (
             <Link href={`https://wa.me/${resumeData.contact.whatsapp.replace(/\D/g, '')}`} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="text-muted-foreground hover:text-primary transition-colors hover:scale-110 transform">
               <WhatsAppIcon className="h-7 w-7" />

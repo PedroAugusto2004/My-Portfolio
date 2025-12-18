@@ -10,18 +10,18 @@ export default function AboutSection() {
   return (
     <section id="about" className="bg-transparent">
       <div className="container mx-auto max-w-screen-lg px-4">
-        <AnimatedScrollWrapper animationClassName="animate-fade-in-up">
+        <AnimatedScrollWrapper>
           <SectionTitle>About Me</SectionTitle>
         </AnimatedScrollWrapper>
 
-        <AnimatedScrollWrapper animationClassName="animate-fade-in-up" delay="delay-100">
+        <AnimatedScrollWrapper delay={0.1}>
           <p className="mb-12 text-center text-lg text-muted-foreground md:text-xl">
             {resumeData.summary}
           </p>
         </AnimatedScrollWrapper>
 
         <div className="grid md:grid-cols-1 gap-8">
-          <AnimatedScrollWrapper as="div" className="w-full" animationClassName="animate-fade-in-up" delay="delay-200">
+          <AnimatedScrollWrapper as="div" className="w-full" delay={0.2}>
             <Accordion type="multiple" className="w-full rounded-lg p-2">
               {resumeData.education.length > 0 && (
                 <AccordionItem value="education">

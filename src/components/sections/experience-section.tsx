@@ -81,13 +81,13 @@ export default function ExperienceSection() {
   return (
     <section id="experience" className="bg-transparent py-16 sm:py-20">
       <div className="container mx-auto max-w-screen-xl px-4">
-        <AnimatedScrollWrapper animationClassName="animate-fade-in-up">
+        <AnimatedScrollWrapper>
           <SectionTitle>Experience & Projects</SectionTitle>
         </AnimatedScrollWrapper>
 
         <div className="mt-12 space-y-12">
           {resumeData.experience.map((exp: ExperienceEntry, index: number) => (
-            <AnimatedScrollWrapper key={index} delay={`delay-${index * 100}`} animationClassName="animate-fade-in-up">
+            <AnimatedScrollWrapper key={index} delay={index * 0.1}>
               <Card className="transition-shadow duration-300">
                 <div className="p-4 sm:p-6 md:p-8">
                   {/* First entry: no image layout */}
