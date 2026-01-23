@@ -98,8 +98,8 @@ export default function ExperienceSection() {
             <AnimatedScrollWrapper key={index} delay={index * 0.1}>
               <Card className="transition-shadow duration-300">
                 <div className="p-4 sm:p-6 md:p-8">
-                  {/* First entry: no image layout */}
-                  {index === 0 ? (
+                  {/* First two entries: no image layout */}
+                  {index <= 1 ? (
                     <div>
                       <div className="flex items-center gap-3 mb-2">
                         <Briefcase className="h-6 w-6 md:h-7 md:w-7 text-primary" />

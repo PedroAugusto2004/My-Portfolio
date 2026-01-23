@@ -135,16 +135,35 @@ export const resumeData = {
   ] as SkillCategory[],
   experience: [
     {
+      id: "revelo",
+      role: "Machine Learning Engineer",
+      company: "Revelo",
+      period: "Remote • Jan 2026 – Present",
+      description: "Selected for invite-only ML engineering role focused on improving LLM performance in real-world software development tasks through advanced evaluation, red-teaming, and systematic failure analysis.",
+      responsibilities: [
+        "Analyzed and corrected failure modes in 300+ complex code generations across Python, JavaScript, and TypeScript, increasing execution correctness and reasoning reliability by 25%.",
+        "Designed structured evaluation criteria and feedback loops that reduced logical errors and invalid assumptions in multi-step model outputs, improving downstream task success rates.",
+        "Implemented systematic red-teaming strategies to identify edge cases, boundary conditions, and potential failure scenarios in LLM-generated software solutions.",
+        "Collaborated with ML research teams to refine model training pipelines, contributing domain-specific insights that enhanced code generation quality and architectural soundness.",
+        "Developed comprehensive documentation of common LLM pitfalls and anti-patterns in software engineering contexts, establishing best practices for prompt engineering and output validation.",
+        "Conducted comparative analysis of model performance across different code complexity levels, providing data-driven recommendations for model selection and optimization strategies."
+      ],
+      projectLinks: []
+    },
+    {
       id: "outlier",
       role: "Machine Learning Specialist",
       company: "Outlier",
-      period: "Remote • 2025 – Present",
-      description: "As an Machine Learning Specialist at Outlier, I analyze and refine AI prompts to enhance model performance. My responsibilities include training AI systems, analyzing their outputs, and improving the quality of AI-generated content. I also identify and correct errors in user prompts to ensure the highest accuracy and efficiency.",
+      period: "Remote • Jun 2025 – Dec 2025",
+      description: "Specialized in LLM evaluation, debugging AI-generated code, and enhancing model outputs through systematic analysis and structured feedback mechanisms.",
       responsibilities: [
-        "Analyzed and evaluated LLM outputs across reasoning, code, and prompt-based tasks to improve model performance.",
-        "Refined and corrected AI prompts to increase clarity, reduce model errors, and ensure high-quality outputs.",
-        "Identified patterns in model failures and edge cases, providing insights that improved overall evaluation accuracy.",
-        "Applied a structured review method to maintain consistency across tasks and enhance alignment with project guidelines."
+        "Debugged and evaluated 500+ LLM-generated Python and JavaScript code samples, improving executable pass rates by 20–25% through targeted error identification and correction.",
+        "Identified recurring reasoning and architectural failure patterns in AI-generated solutions, including off-by-one errors, improper error handling, and inefficient algorithms, reducing error frequency by 15%.",
+        "Improved prompt and task structure to minimize hallucinations and increase determinism in technical outputs, establishing clearer constraints and validation criteria.",
+        "Conducted in-depth analysis of model reasoning chains to identify logical inconsistencies, invalid assumptions, and gaps in contextual understanding.",
+        "Developed and maintained comprehensive evaluation rubrics for assessing code quality, correctness, efficiency, and adherence to best practices across multiple programming paradigms.",
+        "Collaborated cross-functionally with AI trainers and prompt engineers to iterate on task design, resulting in more robust and reliable model performance.",
+        "Documented patterns of model failure modes and success cases, contributing to knowledge base that informed future training data selection and model improvement initiatives."
       ],
       projectLinks: []
     },
