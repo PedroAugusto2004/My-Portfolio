@@ -136,10 +136,10 @@ export const resumeData = {
   experience: [
     {
       id: "revelo",
-      role: "Machine Learning Engineer",
+      role: "AI software developer",
       company: "Revelo",
       period: "Remote • Jan 2026 – Present",
-      description: "Selected for invite-only ML engineering role focused on improving LLM performance in real-world software development tasks through advanced evaluation, red-teaming, and systematic failure analysis.",
+      description: "Selected for invite-only AI Software Development role focused on improving LLM performance in real-world software development tasks through advanced evaluation, red-teaming, and systematic failure analysis.",
       responsibilities: [
         "Analyzed and corrected failure modes in 300+ complex code generations across Python, JavaScript, and TypeScript, increasing execution correctness and reasoning reliability by 25%.",
         "Designed structured evaluation criteria and feedback loops that reduced logical errors and invalid assumptions in multi-step model outputs, improving downstream task success rates.",
