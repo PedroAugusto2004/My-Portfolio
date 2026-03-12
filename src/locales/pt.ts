@@ -58,16 +58,35 @@ export const pt: Translations = {
         visitWebsite: 'Visitar Site',
         items: [
             {
+                id: "revelo",
+                role: "Desenvolvedor de Software de IA",
+                company: "Revelo",
+                period: "Remoto • Jan 2026 – Presente",
+                description: "Selecionado para uma função exclusiva por convite de Desenvolvimento de Software de IA, focada em melhorar o desempenho de LLMs em tarefas reais de desenvolvimento de software por meio de avaliação avançada, red-teaming e análise sistemática de falhas.",
+                responsibilities: [
+                    "Analisei e corrigi modos de falha em mais de 300 gerações complexas de código em Python, JavaScript e TypeScript, aumentando a correção de execução e a confiabilidade de raciocínio em 25%.",
+                    "Projetei critérios de avaliação estruturados e loops de feedback que reduziram erros lógicos e suposições inválidas em saídas de modelos multi-etapas, melhorando as taxas de sucesso em tarefas subsequentes.",
+                    "Implementei estratégias sistemáticas de red-teaming para identificar casos extremos, condições de contorno e cenários potenciais de falha em soluções de software geradas por LLMs.",
+                    "Colaborei com equipes de pesquisa em ML para refinar pipelines de treinamento de modelos, contribuindo com insights específicos do domínio que aprimoraram a qualidade da geração de código e a solidez arquitetônica.",
+                    "Desenvolvi documentação abrangente de armadilhas comuns e antipadrões de LLMs em contextos de engenharia de software, estabelecendo melhores práticas para engenharia de prompts e validação de saídas.",
+                    "Conduzi análise comparativa do desempenho de modelos em diferentes níveis de complexidade de código, fornecendo recomendações baseadas em dados para seleção e estratégias de otimização de modelos."
+                ],
+                projectLinks: [],
+            },
+            {
                 id: "outlier",
                 role: "Especialista em Machine Learning",
                 company: "Outlier",
-                period: "Remoto • 2025 – Presente",
-                description: "Como Especialista em Machine Learning na Outlier, analiso e refino prompts de IA para aprimorar o desempenho do modelo. Minhas responsabilidades incluem treinar sistemas de IA, analisar seus resultados e melhorar a qualidade do conteúdo gerado por IA. Também identifico e corrijo erros em prompts de usuários para garantir a maior precisão e eficiência.",
+                period: "Remoto • Jun 2025 – Dez 2025",
+                description: "Especializado em avaliação de LLMs, depuração de código gerado por IA e aprimoramento de saídas de modelos por meio de análise sistemática e mecanismos de feedback estruturados.",
                 responsibilities: [
-                    "Analisei e avaliei saídas de LLM em tarefas de raciocínio, código e baseadas em prompts para melhorar o desempenho do modelo.",
-                    "Refinei e corrigi prompts de IA para aumentar a clareza, reduzir erros do modelo e garantir saídas de alta qualidade.",
-                    "Identifiquei padrões em falhas de modelo e casos extremos, fornecendo insights que melhoraram a precisão geral da avaliação.",
-                    "Apliquei um método de revisão estruturado para manter a consistência entre as tarefas e aprimorar o alinhamento com as diretrizes do projeto."
+                    "Depurei e avaliei mais de 500 amostras de código em Python e JavaScript geradas por LLMs, melhorando as taxas de aprovação executável em 20–25% por meio de identificação e correção direcionada de erros.",
+                    "Identifiquei padrões recorrentes de falhas de raciocínio e arquitetura em soluções geradas por IA, incluindo erros off-by-one, tratamento inadequado de erros e algoritmos ineficientes, reduzindo a frequência de erros em 15%.",
+                    "Melhorei a estrutura de prompts e tarefas para minimizar alucinações e aumentar o determinismo em saídas técnicas, estabelecendo restrições e critérios de validação mais claros.",
+                    "Conduzi análise aprofundada das cadeias de raciocínio de modelos para identificar inconsistências lógicas, suposições inválidas e lacunas na compreensão contextual.",
+                    "Desenvolvi e mantive rubricas de avaliação abrangentes para avaliar qualidade de código, correção, eficiência e aderência a melhores práticas em múltiplos paradigmas de programação.",
+                    "Colaborei de forma multifuncional com treinadores de IA e engenheiros de prompts para iterar no design de tarefas, resultando em desempenho de modelo mais robusto e confiável.",
+                    "Documentei padrões de modos de falha e casos de sucesso de modelos, contribuindo para a base de conhecimento que informou a seleção futura de dados de treinamento e iniciativas de melhoria de modelos."
                 ],
                 technologies: ["LLMs (GPT-4, Gemini)", "Prompt Engineering", "Python", "Data Analysis", "RLHF"],
                 projectLinks: [],
