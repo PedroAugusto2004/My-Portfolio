@@ -58,6 +58,22 @@ export const es: Translations = {
         visitWebsite: 'Visitar Sitio Web',
         items: [
             {
+                id: "revelo",
+                role: "Desarrollador de Software de IA",
+                company: "Revelo",
+                period: "Remoto • Ene 2026 – Presente",
+                description: "Seleccionado para un rol exclusivo por invitación de Desarrollo de Software de IA, enfocado en mejorar el rendimiento de LLMs en tareas reales de desarrollo de software mediante evaluación avanzada, red-teaming y análisis sistemático de fallos.",
+                responsibilities: [
+                    "Analicé y corregí modos de fallo en más de 300 generaciones complejas de código en Python, JavaScript y TypeScript, aumentando la corrección de ejecución y la confiabilidad del razonamiento en un 25%.",
+                    "Diseñé criterios de evaluación estructurados y bucles de retroalimentación que redujeron errores lógicos y suposiciones inválidas en salidas de modelos de múltiples pasos, mejorando las tasas de éxito en tareas posteriores.",
+                    "Implementé estrategias sistemáticas de red-teaming para identificar casos extremos, condiciones de borde y escenarios potenciales de fallo en soluciones de software generadas por LLMs.",
+                    "Colaboré con equipos de investigación en ML para refinar pipelines de entrenamiento de modelos, aportando insights específicos del dominio que mejoraron la calidad de la generación de código y la solidez arquitectónica.",
+                    "Desarrollé documentación exhaustiva de trampas comunes y antipatrones de LLMs en contextos de ingeniería de software, estableciendo mejores prácticas para la ingeniería de prompts y la validación de salidas.",
+                    "Realicé análisis comparativo del rendimiento de modelos en distintos niveles de complejidad de código, proporcionando recomendaciones basadas en datos para la selección de modelos y estrategias de optimización."
+                ],
+                projectLinks: [],
+            },
+            {
                 id: "outlier",
                 role: "Especialista en Machine Learning",
                 company: "Outlier",
