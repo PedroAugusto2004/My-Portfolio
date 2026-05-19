@@ -17,7 +17,7 @@ export async function sendContactEmail({ name, email, message }: { name: string;
     const resendInstance = getResend();
     const { data, error } = await resendInstance.emails.send({
       from: 'Contact Form <contact@pedrodev.website>', // Use your verified domain here
-      to: ['pa405369@gmail.com'],
+      to: [process.env.RESEND_TO_EMAIL || 'pa405369@gmail.com'],
       subject: `New Contact Message from ${name}`,
       replyTo: email,
       html: `<p><strong>Name:</strong> ${name}</p><p><strong>Email:</strong> ${email}</p><p><strong>Message:</strong><br/>${message}</p>`

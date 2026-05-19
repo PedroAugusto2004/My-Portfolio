@@ -26,7 +26,7 @@ const ProjectShowcase = ({ src, alt, link }: { src: string; alt: string; link?: 
         <div className="ml-4 flex-1 h-6 rounded-md bg-white/50 dark:bg-gray-900/50 border border-gray-200/50 dark:border-gray-700/50 flex items-center px-3">
           <div className="w-2 h-2 rounded-full border border-gray-400 dark:border-gray-500 mr-2 opacity-50" />
           <span className="text-[10px] text-gray-500 dark:text-gray-400 font-mono truncate max-w-[150px] sm:max-w-[200px]">
-            {link ? new URL(link).hostname : 'localhost:3000'}
+            {link ? new URL(link).hostname : 'app.local'}
           </span>
         </div>
       </div>
